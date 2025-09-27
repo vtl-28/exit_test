@@ -4,365 +4,90 @@ A comprehensive Selenium-based automation testing framework for Flipkart e-comme
 
 ## 🚀 Project Overview
 
-This project implements automated testing for Flipkart.com with 20+ test cases covering different flows and screens. The framework follows industry best practices including Page Object Model (POM), data-driven testing, and CI/CD integration.
+- **Application Under Test (AUT):** [FlipKart](https://www.flipkart.com/)
 
-### ✨ Key Features
+- **Test Framework:** Selenium WebDriver with TestNG
 
-- **20+ Automated Test Cases** covering various Flipkart functionalities
-- **Page Object Model (POM)** with Page Factory implementation
-- **Data-Driven Testing** with Excel integration
-- **Cross-Browser Support** (Chrome, Firefox, Internet Explorer)
-- **Headless Mode** execution capability
-- **TestNG Integration** with grouping, priority, and enable/disable features
-- **Extent Reports** with screenshots and detailed logging
-- **CI/CD Pipeline** with Jenkins and GitHub integration
-- **Maven Command Line** execution support
-- **Reusable Libraries** as JAR dependencies
-- **Logger Implementation** for comprehensive logging
-- **Mobile Testing Support** with swipe, scroll, and dimensions
+- **Browsers Supported:** Chrome, Firefox, Microsoft Edge
 
-## 📋 Prerequisites
+- **Build Tool:** Maven
 
-Before setting up the project, ensure you have the following installed:
+- **Logging:** Log4j2 (with JSON layout)
 
-### Required Software
+- **Reporting:** ExtentReports (screenshots on failure included)
 
-1. **Java Development Kit (JDK) 11 or higher**
-   ```bash
-   java -version
-   ```
+# How to Run the Project
 
-2. **Apache Maven 3.6.0 or higher**
-   ```bash
-   mvn -version
-   ```
 
-3. **Git**
-   ```bash
-   git --version
-   ```
 
-4. **Web Browsers**
-   - Google Chrome (latest version)
-   - Mozilla Firefox (latest version)
-   - Internet Explorer 11 (for Windows)
+### 1. ✅ Prerequisites
 
-5. **WebDriver Executables**
-   - ChromeDriver
-   - GeckoDriver (Firefox)
-   - IEDriverServer
 
-### Optional Tools
 
-- **Jenkins** (for CI/CD pipeline)
-- **IDE** (IntelliJ IDEA, Eclipse, or VS Code)
+- Java JDK 11 or higher
 
-## 🛠️ Installation & Setup
+- Maven installed and configured in `PATH`
 
-### Step 1: Clone the Repository
+- Chrome, Firefox, and Edge browsers installed
+
+- Browser drivers set up properly (or auto-managed using Selenium 4)
+
+
+
+### 2. 📦 Clone the Repository
 
 ```bash
-git clone <your-repository-url>
-cd flipkart-automation-testing
+
+git clone https://github.com/vtl-28/exit_test.git
+
+cd exit_test
+
 ```
 
-### Step 2: Install Dependencies
+### 3. 🏃  Run the Tests
+
+Tests can be run directly via Eclipse/IntelliJ:
+
+- Right-click on testng.xml
+
+- Choose Run As → TestNG Suite
+
+Or run via Maven:
 
 ```bash
-mvn clean install
-```
 
-### Step 3: Configure WebDrivers
-
-#### Option A: Using WebDriverManager (Recommended)
-The project uses WebDriverManager for automatic driver management. No manual setup required.
-
-#### Option B: Manual Setup
-1. Download the required WebDriver executables
-2. Add them to your system PATH or place them in `/src/main/resources/drivers/`
-
-### Step 4: Configure Test Data
-
-1. Navigate to `/src/test/resources/testdata/`
-2. Update `TestData.xlsx` with your test data
-3. Set "Execution Required" to "Yes" for test cases you want to run
-
-### Step 5: Configure Properties
-
-Update `/src/main/resources/config/config.properties`:
-
-```properties
-# Browser Configuration
-browser=chrome
-headless=false
-implicit.wait=10
-explicit.wait=20
-
-# Application URLs
-base.url=https://www.flipkart.com/
-timeout=30
-
-# Test Data
-excel.path=src/test/resources/testdata/TestData.xlsx
-
-# Reports
-report.path=test-output/ExtentReport.html
-screenshot.path=test-output/screenshots/
-```
-
-## 🏃‍♂️ Running Tests
-
-### Method 1: Using Maven Command Line
-
-#### Run All Tests
-```bash
-mvn clean test
-```
-
-#### Run Specific Test Suite
-```bash
 mvn clean test -DsuiteXmlFile=testng.xml
-```
-
-#### Run Tests with Specific Browser
-```bash
-mvn clean test -Dbrowser=chrome
-mvn clean test -Dbrowser=firefox
-mvn clean test -Dbrowser=ie
-```
-
-#### Run Tests in Headless Mode
-```bash
-mvn clean test -Dheadless=true
-```
-
-#### Run Specific Test Groups
-```bash
-mvn clean test -Dgroups=smoke
-mvn clean test -Dgroups=regression
-mvn clean test -Dgroups=critical
-```
-
-### Method 2: Using TestNG XML
-
-```bash
-mvn test -DsuiteXmlFile=src/test/resources/testng-suites/smoke-tests.xml
-mvn test -DsuiteXmlFile=src/test/resources/testng-suites/regression-tests.xml
-```
-
-### Method 3: Using IDE
-
-1. Right-click on `testng.xml`
-2. Select "Run as TestNG Suite"
-
-## 📁 Project Structure
 
 ```
-flipkart-automation-testing/
-│
-├── src/
-│   ├── main/
-│   │   └── java/
-│   │       ├── pages/           # Page Object classes
-│   │       ├── utils/           # Utility classes
-│   │       ├── listeners/       # TestNG listeners
-│   │       └── config/          # Configuration classes
-│   │
-│   ├── test/
-│   │   ├── java/
-│   │   │   └── tests/           # Test classes
-│   │   └── resources/
-│   │       ├── testdata/        # Excel test data files
-│   │       ├── config/          # Configuration files
-│   │       └── testng-suites/   # TestNG XML files
-│
-├── test-output/                 # Test reports and screenshots
-├── logs/                        # Log files
-├── drivers/                     # WebDriver executables (if needed)
-├── target/                      # Maven build output
-├── pom.xml                      # Maven configuration
-├── testng.xml                   # Main TestNG suite
-├── Jenkinsfile                  # Jenkins pipeline configuration
-└── README.md                    # This file
-```
-
-## 📊 Test Cases Coverage
-
-The framework includes 20+ test cases covering:
-
-### 🛒 E-commerce Flows
-1. **User Registration & Login**
-   - New user registration
-   - User login with valid/invalid credentials
-   - Password reset functionality
-
-2. **Product Search & Browsing**
-   - Search functionality with filters
-   - Category navigation
-   - Product sorting and filtering
-
-3. **Shopping Cart Operations**
-   - Add/Remove items from cart
-   - Update quantities
-   - Apply coupons and offers
-
-4. **Checkout Process**
-   - Guest checkout
-   - Registered user checkout
-   - Payment gateway integration testing
-
-5. **User Account Management**
-   - Profile update
-   - Address management
-   - Order history
-
-### 📱 Mobile Responsive Testing
-- Touch gestures (swipe, scroll)
-- Responsive design validation
-- Cross-device compatibility
-
-## 🔧 Configuration Files
-
-### Maven Dependencies (pom.xml)
-
-Key dependencies included:
-- Selenium WebDriver
-- TestNG
-- Apache POI (Excel handling)
-- ExtentReports
-- WebDriverManager
-- Log4j2
-
-### TestNG Configuration (testng.xml)
-
-```xml
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="FlipkartAutomationSuite">
-    <parameter name="browser" value="chrome"/>
-    
-    <test name="SmokeTests" priority="1">
-        <groups>
-            <run>
-                <include name="smoke"/>
-            </run>
-        </groups>
-        <classes>
-            <!-- Test classes -->
-        </classes>
-    </test>
-</suite>
-```
-
-## 📈 Reporting
-
-### Extent Reports
-- Detailed HTML reports with screenshots
-- Test execution timeline
-- Pass/Fail statistics
-- Error logs and stack traces
-
-### Access Reports
-Reports are generated in: `test-output/ExtentReport.html`
-
-### Logging
-- Log4j2 implementation
-- Different log levels (DEBUG, INFO, WARN, ERROR)
-- Separate log files for each test execution
-
-## 🔄 CI/CD Integration
-
-### Jenkins Pipeline
-
-The project includes a comprehensive Jenkinsfile with the following stages:
-
-1. **Checkout** - Source code retrieval
-2. **Build** - Maven compilation and dependency validation
-3. **Test** - Test execution with reporting
-4. **Cleanup** - Artifact cleanup
-
-### Jenkins Setup
-
-1. **Install Jenkins Plugins:**
-   - Maven Integration Plugin
-   - TestNG Results Plugin
-   - HTML Publisher Plugin
-   - Git Plugin
-
-2. **Configure Global Tools:**
-   - JDK 11+ installation
-   - Maven 3.6+ installation
-
-3. **Create Pipeline Job:**
-   - New Item → Pipeline
-   - Pipeline script from SCM
-   - Repository URL: `<your-git-repo>`
-   - Script Path: `Jenkinsfile`
-
-### GitHub Integration
-
-1. Configure webhook in GitHub repository
-2. Set up automatic triggering on code changes
-3. Branch protection rules for quality gates
-
-## 🐛 Troubleshooting
-
-### Common Issues & Solutions
-
-#### WebDriver Issues
-```bash
-# Update WebDriver versions
-mvn clean install -U
-```
-
-#### Excel File Access Issues
-- Ensure Excel files are closed during test execution
-- Check file permissions and paths
-
-#### Browser Compatibility
-- Update browser versions
-- Verify WebDriver compatibility
-
-#### Jenkins Pipeline Failures
-- Check Java/Maven versions in Jenkins
-- Verify workspace permissions
-- Review console logs for detailed errors
-
-### Debug Mode
-```bash
-mvn clean test -X -Dtest=<TestClassName>
-```
-
-## 📞 Support & Contribution
-
-### Getting Help
-- Check console logs for detailed error messages
-- Review extent reports for test execution details
-- Enable debug logging for troubleshooting
-
-### Contributing
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## 📜 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🏷️ Version History
-
-- **v1.0.0** - Initial release with core functionality
-- **v1.1.0** - Added mobile testing support
-- **v1.2.0** - Enhanced reporting and CI/CD integration
 
 ---
 
-## 📝 Notes
+# 📈 Reports and Results
 
-- Ensure stable internet connection for Flipkart website access
-- Some test cases may require valid user credentials
-- Screenshots are captured automatically on test failures
-- Test data can be modified in Excel files without code changes
+- After running, results are stored in the target/ directory:
 
-**Happy Testing! 🚀**
+    - **TestNG Report**: test-output/
+
+    - **Extent Report**: target/extent-reports/
+
+    - **Screenshots**: captured automatically on test failures and added to extent reports 
+
+---
+
+# 📋 Test Case Documentation
+
+Test cases are documented in a Google sheet:
+
+👉 [Test Case Excel Document (Google Drive)](https://docs.google.com/spreadsheets/d/15Q9tXp6HJyReYZnw\_90ARg6Q2pukqsgqG1msHvNjZBs/edit?usp=sharing)
+
+---
+
+# ⚠️ Caveats & Notes
+
+- Ensure all required browser drivers are accessible in your PATH or handled automatically.
+
+- Avoid running tests on slow or unstable networks — Amazon pages may load differently and cause flaky tests.
+
+- If a sticky header blocks elements from being clicked, scroll offset logic is implemented, but might need fine-tuning on smaller screens.
+
+- TestNG parallel execution may cause test failures if your system is resource-constrained.
