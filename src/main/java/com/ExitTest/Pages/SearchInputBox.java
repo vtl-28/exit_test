@@ -34,7 +34,7 @@ public class SearchInputBox extends HomePage {
     // ============ Locators ============
     private By searchBtn = By.xpath("//button[@title='Search for Products, Brands and More']");
     private By searchInput = By.xpath("//input[@placeholder='Search for Products, Brands and More']");
-    private By foundProduct = By.xpath("//div[normalize-space()='Apple iPhone 16 (Teal, 128 GB)']");
+    private By foundProduct = By.xpath("//div[normalize-space()='Apple iPhone 16 (White, 256 GB)']");
 
     // ============ Methods ============
 
@@ -61,7 +61,7 @@ public class SearchInputBox extends HomePage {
      * @return The name of the found product as a String.
      */
     public String getFoundProducts() {
-        explicitWaitUntilVisible(2, foundProduct);
+        //explicitWaitUntilVisible(2, foundProduct);
         String product = getElementText(foundProduct);
         return product;
     }

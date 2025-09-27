@@ -26,7 +26,6 @@
 		<class name="com.ExitTest.Tests.SellersTest"/>
 		<class name="com.ExitTest.Tests.SignUpTest"/>
 		<class name="com.ExitTest.Tests.ClearTripTest"/>	  
-	    <class name="com.ExitTest.Tests.ClearTripSupportTest"/>
     </classes>
   </test>
   

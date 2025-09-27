@@ -57,6 +57,9 @@ public class ClearTripTest extends BaseTest {
 
         clearTripPage.closeModal();
         logger.info("Closed modal that appears on ClearTrip page");
+        
+        clearTripPage.closeFooterModal();
+        logger.info("Closed modal that appears at the footer on ClearTrip page");
 
         clearTripPage.searchFlights();
         logger.info("Clicked search flights button without entering data");

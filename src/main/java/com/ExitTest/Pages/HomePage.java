@@ -41,7 +41,8 @@ public class HomePage extends BasePage {
     private By loginNavItem = By.xpath("//a[@href='/account/login?ret=/']");
     private By signUpBtn = By.xpath("//span[@class='_1Mikcj']");
     private By cartNavItem = By.xpath("//a[@class='_3RX0a-']");
-    private By bestSellersNavItem = By.xpath("//a[@class='_3RX0a- _3jeYYh']");
+//    private By bestSellersNavItem = By.xpath("//a[@class='_3RX0a- _3jeYYh']");
+    private By bestSellersNavItem = By.xpath("//a[contains(text(),'Become a Seller')]");
     private By faqNavItem = By.xpath("//a[@aria-label='FAQ']");
     private By loginDialogBtn = By.xpath("//a[@class='_1jKL3b']");
     private By flightsNavItem = By.xpath("//span[contains(text(),'Flight Bookings')]");

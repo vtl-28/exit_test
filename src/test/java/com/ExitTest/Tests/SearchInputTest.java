@@ -64,7 +64,7 @@ public class SearchInputTest extends BaseTest {
 
         String actualProductFound = searchPage.getFoundProducts();
 
-        String expectedProductFound = "Apple iPhone 16 (Teal, 128 GB)";
+        String expectedProductFound = "Apple iPhone 16 (White, 256 GB)";
         logger.info("Retrieved actual and expected product values");
 
         Assert.assertEquals(actualProductFound, expectedProductFound,

@@ -21,6 +21,7 @@ package com.ExitTest.Pages;
 
 import static com.ExitTest.Utilities.JavaScriptActions.scrollToElementJSWithOffset;
 import static com.ExitTest.Utilities.GetElementTextActions.getElementText;
+import static com.ExitTest.Utilities.WaitActions.explicitWaitUntilVisible;
 import org.openqa.selenium.By;
 
 /**
@@ -37,6 +38,10 @@ public class ClearTripPage extends HomePage {
     private By closeModalBtn = By.xpath("//div[@class='pb-1 px-1 flex flex-middle nmx-1']//*[name()='svg']//*[name()='path' and contains(@d,'M18 6L12 1')]");
 
     private By supportNavItem = By.xpath("//*[@id=\"__next\"]/div/div[1]/div/div[2]/div[1]/div[4]/div");
+    
+    private By closeFooterModalBtn = By.xpath("//div[@class='closeit']");
+    
+    private By tripIDInput = By.xpath("//input[@placeholder='Enter Trip ID']");
 
     /**
      * Closes the modal popup displayed on the ClearTrip page.
@@ -46,6 +51,10 @@ public class ClearTripPage extends HomePage {
      */
     public void closeModal() {
         click(closeModalBtn);
+    }
+    
+    public void closeFooterModal() {
+    	click(closeFooterModalBtn);
     }
 
     /**
@@ -76,6 +85,7 @@ public class ClearTripPage extends HomePage {
      */
     public ClearTripSupportPage goToClearTripSupportPage() {
         click(supportNavItem);
+        explicitWaitUntilVisible(5, tripIDInput);
         return new ClearTripSupportPage();
     }
 }

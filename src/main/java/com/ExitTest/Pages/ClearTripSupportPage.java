@@ -21,6 +21,7 @@ package com.ExitTest.Pages;
 
 import org.openqa.selenium.By;
 import static com.ExitTest.Utilities.GetElementTextActions.getElementText;
+import static com.ExitTest.Utilities.WaitActions.explicitWaitUntilVisible;
 
 /**
  * Page Object Model (POM) class for interacting with the ClearTrip Support page.
@@ -44,6 +45,7 @@ public class ClearTripSupportPage extends ClearTripPage {
      * @param tripID The Trip ID to enter into the input field.
      */
     public void fillInForm(String tripID) {
+        explicitWaitUntilVisible(5, tripIDInput);
         click(tripIDInput);
         set(tripIDInput, tripID);
     }
@@ -52,6 +54,7 @@ public class ClearTripSupportPage extends ClearTripPage {
      * Clicks the 'Get OTP' button to request a one-time password.
      */
     public void getOTP() {
+    	explicitWaitUntilVisible(5, getOTPBtn);
         click(getOTPBtn);
     }
 
@@ -61,6 +64,7 @@ public class ClearTripSupportPage extends ClearTripPage {
      * @return The error message text as a String.
      */
     public String getErrorMessageText() {
+    	 explicitWaitUntilVisible(5, errorMessage);
         String text = getElementText(errorMessage);
         return text;
     }
