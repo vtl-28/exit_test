@@ -1,32 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Extent Report">
- 
-  <listeners>
-     <listener class-name ="com.ExitTest.ExtentListeners.ExtentListeners"/>
-  </listeners>
-  
-  <test name="Testing on Chrome">
-  	<parameter name="browser" value="chrome"></parameter>
-  	<parameter name="AUT" value="https://www.flipkart.com/"></parameter>
-  	<parameter name="searchItem" value="mobiles"></parameter>
-  	<parameter name="mobileNumber" value="1234567890"></parameter>
 
-    <classes>
-		<class name="com.ExitTest.Tests.AdvertiseTest"/>
-		<class name="com.ExitTest.Tests.BookingFlightTest"/>
-		<class name="com.ExitTest.Tests.CartTest"/>
-		<class name="com.ExitTest.Tests.FAQTest"/>
-		<class name="com.ExitTest.Tests.LoginTest"/>
-		<class name="com.ExitTest.Tests.MobilesTabletsTest"/>
-		<class name="com.ExitTest.Tests.NotificationsTest"/>
-		<class name="com.ExitTest.Tests.OfferZoneTest"/>
-		<class name="com.ExitTest.Tests.PressTest"/>
-		<class name="com.ExitTest.Tests.SearchInputTest"/>
-		<class name="com.ExitTest.Tests.SellersTest"/>
-		<class name="com.ExitTest.Tests.SignUpTest"/>
-		<class name="com.ExitTest.Tests.ClearTripTest"/>	  
-    </classes>
-  </test>
-  
-</suite> <!-- Suite -->
+	<listeners>
+		<listener class-name="com.ExitTest.ExtentListeners.ExtentListeners" />
+	</listeners>
+
+	<test name="Testing on Chrome">
+		<parameter name="browser" value="chrome"></parameter>
+		<parameter name="AUT" value="https://www.flipkart.com/"></parameter>
+		<parameter name="searchItem" value="mobiles"></parameter>
+		<parameter name="mobileNumber" value="1234567890"></parameter>
+
+		<classes>
+			<class name="com.ExitTest.Tests.AdvertiseTest" />
+			<class name="com.ExitTest.Tests.AdvertiseTest" />
+			<class name="com.ExitTest.Tests.BookingFlightTest" />
+			<class name="com.ExitTest.Tests.CartTest" />
+			<class name="com.ExitTest.Tests.FAQTest" />
+			<class name="com.ExitTest.Tests.LoginTest" />
+			<class name="com.ExitTest.Tests.MobilesTabletsTest" />
+			<class name="com.ExitTest.Tests.NotificationsTest" />
+			<class name="com.ExitTest.Tests.OfferZoneTest" />
+			<class name="com.ExitTest.Tests.PressTest" />
+			<class name="com.ExitTest.Tests.SearchInputTest" />
+			<class name="com.ExitTest.Tests.SellersTest" />
+			<class name="com.ExitTest.Tests.SignUpTest" />
+			<class name="com.ExitTest.Tests.ClearTripTest" />
+		</classes>
+	</test>
+
+	<test name="Testing on Firefox">
+		<parameter name="browser" value="firefox"></parameter>
+		<parameter name="AUT" value="https://www.flipkart.com/"></parameter>
+		<parameter name="searchItem" value="mobiles"></parameter>
+		<parameter name="mobileNumber" value="1234567890"></parameter>
+
+		<classes>
+			<class name="com.ExitTest.Tests.AdvertiseTest" />
+			<class name="com.ExitTest.Tests.AdvertiseTest" />
+			<class name="com.ExitTest.Tests.BookingFlightTest" />
+			<class name="com.ExitTest.Tests.CartTest" />
+			<class name="com.ExitTest.Tests.FAQTest" />
+			<class name="com.ExitTest.Tests.LoginTest" />
+			<class name="com.ExitTest.Tests.MobilesTabletsTest" />
+			<class name="com.ExitTest.Tests.NotificationsTest" />
+			<class name="com.ExitTest.Tests.OfferZoneTest" />
+			<class name="com.ExitTest.Tests.PressTest" />
+			<class name="com.ExitTest.Tests.SearchInputTest" />
+			<class name="com.ExitTest.Tests.SellersTest" />
+			<class name="com.ExitTest.Tests.SignUpTest" />
+			<class name="com.ExitTest.Tests.ClearTripTest" />
+		</classes>
+	</test>
+
+	<test name="Testing on Edge">
+		<parameter name="browser" value="edge"></parameter>
+		<parameter name="AUT" value="https://www.flipkart.com/"></parameter>
+		<parameter name="searchItem" value="mobiles"></parameter>
+		<parameter name="mobileNumber" value="1234567890"></parameter>
+
+		<classes>
+			<class name="com.ExitTest.Tests.AdvertiseTest" />
+			<class name="com.ExitTest.Tests.AdvertiseTest" />
+			<class name="com.ExitTest.Tests.BookingFlightTest" />
+			<class name="com.ExitTest.Tests.CartTest" />
+			<class name="com.ExitTest.Tests.FAQTest" />
+			<class name="com.ExitTest.Tests.LoginTest" />
+			<class name="com.ExitTest.Tests.MobilesTabletsTest" />
+			<class name="com.ExitTest.Tests.NotificationsTest" />
+			<class name="com.ExitTest.Tests.OfferZoneTest" />
+			<class name="com.ExitTest.Tests.PressTest" />
+			<class name="com.ExitTest.Tests.SearchInputTest" />
+			<class name="com.ExitTest.Tests.SellersTest" />
+			<class name="com.ExitTest.Tests.SignUpTest" />
+			<class name="com.ExitTest.Tests.ClearTripTest" />
+		</classes>
+	</test>
+
+</suite> <!--
+Suite -->
