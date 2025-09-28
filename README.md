@@ -56,7 +56,7 @@ Or run via Maven:
 
 ```bash
 
-mvn clean test -DsuiteXmlFile=testng.xml
+mvn test
 
 ```
 
