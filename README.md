@@ -74,14 +74,6 @@ mvn clean test -DsuiteXmlFile=testng.xml
 
 ---
 
-# 📋 Test Case Documentation
-
-Test cases are documented in a Google sheet:
-
-👉 [Test Case Excel Document (Google Drive)](https://docs.google.com/spreadsheets/d/15Q9tXp6HJyReYZnw\_90ARg6Q2pukqsgqG1msHvNjZBs/edit?usp=sharing)
-
----
-
 # ⚠️ Caveats & Notes
 
 - Ensure all required browser drivers are accessible in your PATH or handled automatically.
